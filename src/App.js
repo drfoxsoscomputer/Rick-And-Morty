@@ -7,6 +7,7 @@ import Nav from "./components/Nav.jsx";
 function App() {
   const [characters, setCharacters] = useState([]);
 
+  // Función para obtener todos los personajes
   const onSearch = (id) => {
     if (isNaN(id)) {
       alert("Por favor, ingresa un número válido como ID.");
@@ -14,7 +15,6 @@ function App() {
     }
 
     axios(`https://rickandmortyapi.com/api/character/${id}`)
-      // .then((response) => response.data)
       .then(({ data }) => {
         if (data.name) {
           const characterExists = characters.some(
@@ -38,11 +38,11 @@ function App() {
       });
   };
 
+  // Función para obtener un personaje aleatorio
   const randomCharacter = () => {
     const randomId = Math.floor(Math.random() * 826) + 1;
 
     axios(`https://rickandmortyapi.com/api/character/${randomId}`)
-      // .then((response) => response.data)
       .then(({ data }) => {
         if (data.name) {
           const characterExists = characters.includes(data);
@@ -64,6 +64,7 @@ function App() {
       });
   };
 
+  // Función para eliminar un personaje
   const onClose = (id) => {
     const charactersFiltered = characters.filter(
       (character) => character.id !== parseInt(id)
