@@ -5,7 +5,11 @@ export default function Cards({ characters, onClose }) {
     <div>
       {characters.map(function (character) {
         return (
-          <Card key={character.id} character={character} onClose={onClose} />
+          <Card 
+          key={character.id} 
+          character={character} 
+          onClose={onClose} 
+          />
         );
       })}
     </div>
