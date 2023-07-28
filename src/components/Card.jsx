@@ -5,10 +5,10 @@ export default function Card({ character, onClose }) {
       <hr />
       <button onClick={() => onClose(id)}>X</button>
       <h2>{name}</h2>
-      <h2>{status}</h2>
-      <h2>{species}</h2>
-      <h2>{gender}</h2>
-      <h2>{origin.name}</h2>
+      <p>{status}</p>
+      <p>{species}</p>
+      <p>{gender}</p>
+      <p>{origin.name}</p>
       <img src={image} alt={name} />
       <hr />
     </div>

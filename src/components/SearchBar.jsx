@@ -7,15 +7,17 @@ export default function SearchBar({ onSearch }) {
     setId(event.target.value);
   };
 
+  const handleSearch = () => {
+    if (id.trim() !== "") {
+      onSearch(id);
+      setId("");
+    }
+  };
+
   return (
     <div>
-      <input type="search" onChange={handleChange} value={id} />
-      <button
-        onClick={() => {
-          onSearch(id);
-          setId("");
-        }}
-      >
+      <input type="search" placeholder="Id..." onChange={handleChange} value={id} />
+      <button onClick={handleSearch} disabled={id.trim() === ""}>
         Agregar
       </button>
     </div>
