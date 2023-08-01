@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-export default function SearchBar({ onSearch }) {
+const SearchBar = ({ onSearch }) => {
   const [id, setId] = useState("");
+  const randomId = Math.floor(Math.random() * 826)+1;
 
   // funcion para manejar el evento onChange
   const handleChange = (event) => {
@@ -29,6 +30,9 @@ export default function SearchBar({ onSearch }) {
       <button onClick={handleSearch} disabled={id.trim() === ""}>
         Agregar
       </button>
+      <button onClick={() => onSearch(randomId)}>Add Random</button>
     </div>
   );
-}
+};
+
+export default SearchBar;
