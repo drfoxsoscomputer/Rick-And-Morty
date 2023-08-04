@@ -1,7 +1,7 @@
 import SearchBar from "./SearchBar";
 import { NavLink } from "react-router-dom";
 
-const Nav = ({ onSearch, onRandom }) => {
+const Nav = ({ onSearch, onLogout }) => {
   return (
     <nav>
       <NavLink to="/home">
@@ -14,6 +14,10 @@ const Nav = ({ onSearch, onRandom }) => {
 
       <NavLink to="/home">
         <SearchBar onSearch={onSearch} />
+      </NavLink>
+
+      <NavLink to="/">
+        <button onClick={onLogout}>Logout</button>
       </NavLink>
     </nav>
   );

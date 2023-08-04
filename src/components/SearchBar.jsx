@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const SearchBar = ({ onSearch }) => {
   const [id, setId] = useState("");
-  const randomId = Math.floor(Math.random() * 826)+1;
+  const randomId = Math.floor(Math.random() * 826) + 1;
+  const location = useLocation();
 
   // funcion para manejar el evento onChange
   const handleChange = (event) => {
@@ -11,26 +13,29 @@ const SearchBar = ({ onSearch }) => {
 
   // funcion para manejar el evento onClick
   const handleSearch = () => {
-    // trim desactiva el botón de agregar cuando el id está vacío
-    if (id.trim() !== "") {
-      onSearch(id);
-      //setId vacía el input
-      setId("");
-    }
+    onSearch(id);
+    //setId vacía el input
+    setId("");
   };
-
   return (
     <div>
-      <input
-        type="search"
-        placeholder="Id..."
-        onChange={handleChange}
-        value={id}
-      />
-      <button onClick={handleSearch} disabled={id.trim() === ""}>
-        Agregar
-      </button>
-      <button onClick={() => onSearch(randomId)}>Add Random</button>
+      {location.pathname === "/home" && (
+        <input
+          type="search"
+          placeholder="Id..."
+          onChange={handleChange}
+          value={id}
+        />
+      )}
+      {location.pathname === "/home" && (
+        <button
+          onClick={handleSearch}
+          // desactiva el botón si el input del id está vacío
+          disabled={!id}>
+          Agregar
+        </button>
+      )}
+      {location.pathname === "/home" && <button onClick={() => onSearch(randomId)}>Add Random</button>}
     </div>
   );
 };
