@@ -27,14 +27,17 @@ const SearchBar = ({ onSearch }) => {
           value={id}
         />
       )}
+
       {location.pathname === "/home" && (
         <button
-          onClick={handleSearch}
+          onClick={()=>handleSearch()}
           // desactiva el botón si el input del id está vacío
           disabled={!id}>
-          Agregar
+          Add
         </button>
       )}
+
+      {/* El botón de Add Random se muestra si el usuario está en la página de Home */}
       {location.pathname === "/home" && <button onClick={() => onSearch(randomId)}>Add Random</button>}
     </div>
   );

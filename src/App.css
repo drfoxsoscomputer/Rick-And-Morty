@@ -1,3 +1,12 @@
 .App {
    text-align: center;
+   
+}
+*
+{
+   background-image: url("../assets/BG2.webp");
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+   background-position: center;
 }

@@ -1,0 +1,163 @@
+img
+{
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px #000;
+    
+}
+/* .CardContainer
+{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    width: fit-content;
+    height: fit-content;
+    padding: 0.2rem;
+    border-radius: 10px;
+    border: 2px solid green;
+    backdrop-filter: blur(5px);
+    margin: 1rem;
+    box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 10px 10px 32px 0px rgba(0, 0, 0, 0.75);
+} */
+
+/* .container-card{
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+} */
+
+/* container-card2
+{
+    display: grid;
+    grid-template-columns:
+    repeat(
+        auto-fit,
+        minmax(150px, 1fr)
+        );
+    gap: 32px;
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    box-shadow: 0px 0px 30px #000;
+
+} */
+
+
+
+/* 
+
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}*/
+
+/* Card
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623;
+} */
+
+/* body::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f00, #f0f);
+    clip-path: circle(20% at right 10%);
+
+}
+
+body::after
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#2196f3, #f00);
+    clip-path: circle(20% at 10% 10%);
+
+} */
+
+/* .container
+{
+    position: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 300px;
+    flex-wrap: wrap;
+    z-index: 1;
+} */
+
+
+/* .card
+{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.5);
+    border-left: 1px solid rgba(255,255,255,0.5);
+    backdrop-filter: blur(5px);
+} */
+/*
+.card:hover
+{
+    transform: translateY(0px);
+    opacity: 1;
+}
+.content
+{
+    padding: 20px;
+    text-align: center;
+    transform: translateY(50px);
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.x
+{
+    top: 0px;
+    position: absolute;
+    right: 1px;
+    font-size: 1em;
+    color: rgba(0,0,0,0.5);
+    pointer-events: none;
+}
+
+.title
+{
+    font-size: 1.8em;
+    color: #fff;
+    pointer-events: none;
+}
+
+.features
+{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+} */
