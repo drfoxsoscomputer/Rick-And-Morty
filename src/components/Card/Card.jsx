@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import "./Card.module.css";
+import style from "./Card.module.css";
 import { addFav, removeFav } from "../../redux/actions.js";
 import { connect } from "react-redux";
 import { useState, useEffect } from "react";
@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 // componente presentacional/dumb
 
 const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
-  const { id, name, status, species, gender, image } = character;
+  const { id, name, status, species, gender, origin, image } = character;
 
   const [isFav, setIsFav] = useState(false);
 
@@ -25,23 +25,33 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
   }, [myFavorites]);
 
   return (
-    <div>
+    <div className={style.container}>
       <hr />
-
-      <button onClick={handleFavorite}>{isFav ? "❤️" : "🤍"}</button>
+      <button
+        className={style.favButton}
+        onClick={handleFavorite}>
+        {isFav ? "❤️" : "🤍"}
+      </button>
 
       {/* El botón para cerrar la card se muestra solo en la página de home */}
-      {useLocation().pathname === "/home" && <button onClick={() => onClose(id)}>❌</button>}
+      {useLocation().pathname === "/home" && (
+        <button
+          className={style.closeButton}
+          onClick={() => onClose(id)}>
+          ❌
+        </button>
+      )}
 
-      <Link to={`/detail/${id}`}>
-        <h2>{name}</h2>
-      </Link>
       <img
         className="img"
         src={image}
         alt={name}
       />
-      
+
+      <Link to={`/detail/${id}`}>
+        <h2>{name}</h2>
+      </Link>
+
       <p>{status}</p>
       <p>{species}</p>
       <p>{gender}</p>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import validation from "./validation.js";
-import "./Form.modules.css";
+import styles from "./Form.module.css";
 
 const Form = ({ onLogin }) => {
   const [userData, setUserData] = useState({ email: "", password: "" });
@@ -31,43 +31,48 @@ const Form = ({ onLogin }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="email">Email</label>
-      <input
-        className={errors.email && "warning"}
-        type="email"
-        name="email"
-        placeholder="Email..."
-        value={userData.email}
-        onChange={handleChange}
-      />
+    <div className={styles.loginContainer}>
+      <h1>Rick and Morty</h1>
       <br />
-      <label htmlFor="password">Password</label>
-      <input
-        className={errors.password && "warning"}
-        type={showPassword ? "text" : "password"}
-        name="password"
-        placeholder="Password..."
-        value={userData.password}
-        onChange={handleChange}
-      />
-      <button
-        disabled={!userData.email || !userData.password}
-        type="submit">
-        Submit
-      </button>
-      <br />
-      {/* checkbox mostrar ocultar contraseña */}
-      <input
-        type="checkbox"
-        name="show-password"
-        id="show-password"
-        onChange={handleShowPassword}
-      />
-      <span>Show Password</span>
-      {errors.email && <p className="danger">{errors.email}</p>}
-      {errors.password && <p className="danger">{errors.password}</p>}
-    </form>
+      <form onSubmit={handleSubmit}>
+        <label>Email</label>
+        <input
+          className={errors.email && styles.warning}
+          type="email"
+          name="email"
+          placeholder="Email..."
+          value={userData.email}
+          onChange={handleChange}
+        />
+        <br />
+        <label>Password</label>
+        <input
+          className={errors.password && styles.warning}
+          type={showPassword ? "text" : "password"}
+          name="password"
+          placeholder="Password..."
+          value={userData.password}
+          onChange={handleChange}
+        />
+
+        {/* checkbox mostrar ocultar contraseña */}
+        <input
+          type="checkbox"
+          name="show-password"
+          id="show-password"
+          onChange={handleShowPassword}
+        />
+        <span>Show Password</span>
+        <br />
+        <button
+          disabled={!userData.email || !userData.password}
+          type="submit">
+          Submit
+        </button>
+        <p className={styles.danger}>{errors.email}</p>
+        <p className={styles.danger}>{errors.password}</p>
+      </form>
+    </div>
   );
 };
 

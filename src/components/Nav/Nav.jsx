@@ -23,6 +23,7 @@ const Nav = ({ onSearch, onLogout }) => {
       <NavLink to="/">
         <button onClick={onLogout}>LogOut</button>
       </NavLink>
+      <hr />
     </nav>
   );
 };

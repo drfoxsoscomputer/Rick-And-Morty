@@ -21,10 +21,10 @@ const Detail = () => {
         src={character?.image}
         alt={character?.name}
       />
-      <h3>{character?.status}</h3>
-      <h3>{character?.species}</h3>
-      <h3>{character?.gender}</h3>
-      <h3>{character?.origin?.name}</h3>
+      <h3>{character.status}</h3>
+      <h3>{character.species}</h3>
+      <h3>{character.gender}</h3>
+      <h3>{character.origin?.name}</h3>
     </div>
   );
 };
