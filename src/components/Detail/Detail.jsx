@@ -15,7 +15,6 @@ const Detail = () => {
 
   return (
     <div>
-      <hr/>
       <h1>{character?.name}</h1>
       <img
         src={character?.image}

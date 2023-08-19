@@ -25,8 +25,7 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
   }, [myFavorites]);
 
   return (
-    <div className={style.container}>
-      <hr />
+    <div className={style.card}>
       <button
         className={style.favButton}
         onClick={handleFavorite}>
@@ -41,6 +40,7 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
           ❌
         </button>
       )}
+<Link to={`/detail/${id}`}>
 
       <img
         className="img"
@@ -48,15 +48,13 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
         alt={name}
       />
 
-      <Link to={`/detail/${id}`}>
         <h2>{name}</h2>
-      </Link>
 
-      <p>{status}</p>
+      {/* <p>{status}</p> */}
       <p>{species}</p>
       <p>{gender}</p>
       <p>{origin.name}</p>
-      <hr />
+      </Link>
     </div>
   );
 };

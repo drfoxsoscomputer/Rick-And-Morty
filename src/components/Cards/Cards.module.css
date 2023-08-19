@@ -1,26 +1,9 @@
-/* .cardsContainer{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center; 
-} */
-
-.container {
-	display: flex;
-    /* flex-direction: row; */
-    flex-wrap: wrap;
-    width: 90%;
-    margin: auto;
-    padding: 2em;
-    border-radius: 15px;
-    justify-content: center;
-}
 
 
-/* container
-{
-grid-template-columns: repeat(
-    auto-fit,
-    minmax(150px,1fr)
-);
-gap: 32px;
+/* .cards {
+   
+     display: flex;
+     flex-wrap: wrap;
+     justify-content: center;
+   
 } */

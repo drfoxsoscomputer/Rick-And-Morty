@@ -10,17 +10,18 @@
   } */
 
   
-  /* body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('../../../assets/BG2.webp');
+   body {
+     background-image: url('../../../assets/BG3.png');
+    /* display: flex; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* height: 100vh; */
     background-size: cover;
     background-position: center;
-    margin: 0;
-    padding: 0;
-  } */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+  } 
 
 
 
@@ -31,14 +32,15 @@
     align-items: center;
     height: 100vh;
     
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    /* backdrop-filter: blur(10px); */
     border-radius: 5px;
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
   }
   
   .loginContainer h2 {
     text-align: center;
+    
   }
   
   .loginContainer form {
@@ -48,8 +50,14 @@
     width: 300px;
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(5px);
     border-radius: 5px;
+    /* box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff; */
+  }
+
+    .loginContainer form:hover {
+   
+    
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
   }
   
