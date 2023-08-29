@@ -32,9 +32,19 @@ const Form = ({ onLogin }) => {
 
   return (
     <div className={styles.loginContainer}>
-      <h1>Rick and Morty</h1>
+      <div className={styles.neon}>
+        <span
+          className={styles.text}
+          data-text="Rick And Morty">
+          Rick And Morty
+        </span>
+        <span className={styles.gradient}></span>
+        <span className={styles.spotlight}></span>
+      </div>
       <br />
+
       <form onSubmit={handleSubmit}>
+        <h1>Login</h1>
         <label>Email</label>
         <input
           className={errors.email && styles.warning}
@@ -56,13 +66,16 @@ const Form = ({ onLogin }) => {
         />
 
         {/* checkbox mostrar ocultar contraseña */}
+        <br />
         <input
           type="checkbox"
           name="show-password"
           id="show-password"
           onChange={handleShowPassword}
         />
-        <span>Show Password</span>
+        <br />
+        <label>Show Password</label>
+
         <br />
         <button
           disabled={!userData.email || !userData.password}

@@ -51,8 +51,8 @@ function App() {
       alert("Por favor, ingresa un número válido como ID.");
       return;
     }
-
-    axios(`https://rickandmortyapi.com/api/character/${id}`)
+    // const URL = "https://rickandmortyapi.com/api/character/${id}`"
+    axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
         const characterExists = characters.some((character) => character.id === data.id);
         if (data.id) {

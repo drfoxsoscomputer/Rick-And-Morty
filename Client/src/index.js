@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
-import "./index.css";
+import "../src/index.css";
 import App from "./App";
 import store from "./redux/store.js";
 
@@ -14,7 +14,7 @@ root.render(
     </BrowserRouter>
   </Provider>
 );
-console.log(store.getState().myFavorites);
+// console.log(store.getState().myFavorites);
 // ReactDOM.createRoot(document.getElementById("root")).render(
 //   // <Provider store={store}>
 //     <BrowserRouter>

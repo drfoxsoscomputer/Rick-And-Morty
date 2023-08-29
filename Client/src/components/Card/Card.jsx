@@ -22,38 +22,39 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
         setIsFav(true);
       }
     });
-  }, [myFavorites]);
+  }, [myFavorites,id]);
 
   return (
     <div className={style.card}>
-      <button
-        className={style.favButton}
-        onClick={handleFavorite}>
-        {isFav ? "❤️" : "🤍"}
-      </button>
-
-      {/* El botón para cerrar la card se muestra solo en la página de home */}
-      {useLocation().pathname === "/home" && (
+      <div>
         <button
-          className={style.closeButton}
-          onClick={() => onClose(id)}>
-          ❌
+          className={style.favButton}
+          onClick={handleFavorite}>
+          {isFav ? "❤️" : "🤍"}
         </button>
-      )}
-<Link to={`/detail/${id}`}>
 
-      <img
-        className="img"
-        src={image}
-        alt={name}
-      />
+        {/* El botón para cerrar la card se muestra solo en la página de home */}
+        {useLocation().pathname === "/home" && (
+          <button
+            className={style.closeButton}
+            onClick={() => onClose(id)}>
+            ❌
+          </button>
+        )}
+      </div>
 
-        <h2>{name}</h2>
+      <h2>{name}</h2>
+      <Link to={`/detail/${id}`}>
+        <img
+          className="img"
+          src={image}
+          alt={name}
+        />
 
-      {/* <p>{status}</p> */}
-      <p>{species}</p>
-      <p>{gender}</p>
-      <p>{origin.name}</p>
+        {/* <p>{status}</p> */}
+        {/* <p>{species}</p> */}
+        {/* <p>{gender}</p> */}
+        {/* <p>{origin.name}</p> */}
       </Link>
     </div>
   );

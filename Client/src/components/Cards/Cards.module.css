@@ -1,0 +1,13 @@
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+     /* padding: 5px 5px 5px 5px; */
+    /* flex-direction: Row; */
+    /* align-items: center; */
+    /* align-content: center;  */
+  
+   
+}

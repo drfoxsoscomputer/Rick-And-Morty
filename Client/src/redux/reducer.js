@@ -43,7 +43,6 @@ const reducer = (state = initialState, action) => {
         myFavorites: [...ordered],
         // myFavorites: action.payload === "Ascendente" ? state.myFavorites.sort((a, b) => a.id - b.id) : state.myFavorites.sort((a, b) => b.id - a.id),
       };
-    // 1:23
     default:
       return { ...state };
   }
