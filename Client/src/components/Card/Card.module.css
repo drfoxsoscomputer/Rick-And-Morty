@@ -11,12 +11,10 @@
     background-color: rgba(255, 255, 255, 0.5);
     /* background-color: gold; */
     backdrop-filter: blur(5px);
-    
-    
   }
 
   .card:hover{
-    transform: scale(1.05);
+    transform: scale(1.03);
     transition: 0.3s;
     cursor: pointer;
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 50px #00ffff;
@@ -24,22 +22,29 @@
 }
 
 .closeButton{
-    border: 0px;
-    margin-top: 0;
-    background-color: transparent;
+    /* border: 0px; */
+    /* margin-top: 0; */
+    /* background-color: transparent; */
     margin-left: 10em;
+    /* border-radius: 15px; */
+    border: 0px;
+    border-radius: 50%;
+    background-color: transparent;
+    backdrop-filter: blur(5px)
 }
 
 .closeButton:hover{
     transform: scale(1.3);
     transition: 0.2s;
     cursor: pointer;
-    border-radius: 5px;
+    
 }
 
 .favButton{
     border: 0px;
+    border-radius: 50%;
     background-color: transparent;
+    backdrop-filter: blur(5px)
   }
 
 .favButton:hover{
@@ -51,27 +56,52 @@
   .card img {
      width: 100%;
      height: auto;
-     
      border-radius: 10px;
    }
 
       .card h2 {
+        font-size: 1rem;
+        border: 0px;
+        border-radius: 50%;
+        background-color: gold;
+        /* background-color: transparent; */
+        backdrop-filter: blur(5px)
 
-     font-size: 18px;
+        /* display: none; */
+        /* position: absolute; */
+     /* color: white; */
+     /* -webkit-text-stroke: 0.08rem black; */
+
+     /* color: #333; */
+     /* -webkit-text-stroke: 1px #282828; */
+     /* text-shadow: 0px 2px 4px #00ffff; */
+
+     /* color: #333;
+     -webkit-text-stroke: 1px #282828;
+     text-shadow: 0px 4px 4px #282828; */
+     /* text-align: center; */
+     /* text-shadow: #00ffff; */
+     /* text-shadow: */
+     /* -3px -3px 0 #00ffff, */
+     /* -3px 3px 0 #00ffff, */
+     /* -3px -3px 0 #00ffff, */
+     /* 3px -3px 0 #00ffff; */
+     /* text-justify: auto; */
      /* margin-bottom: 10px; */
      /* color: #333; */
      /* text-decoration: none; */
      /* transform: scale(1.1); */
    }
 
-   /* .card h2:hover {
-    position: absolute;
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-    text-decoration: none;
-    transform: scale(2);
-  } */
+   /* .card h2:hover { */
+    /* display: active; */
+    /* position: absolute; */
+    /* font-size: 1rem; */
+    /* margin-bottom: 10px; */
+    /* color: #333; */
+    /* text-decoration: none; */
+    /* transform: scale(2); */
+  /* } */
 
 
       .card p {
