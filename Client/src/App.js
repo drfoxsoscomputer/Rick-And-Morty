@@ -19,18 +19,31 @@ function App() {
   const [access, setAccess] = useState(false);
 
   // Simulación de la BD donde está guardado el email y el password
-  const EMAIL = "daprthefox@gmail.com";
-  const PASSWORD = "asd123";
+  // const EMAIL = "daprthefox@gmail.com";
+  // const PASSWORD = "asd123";
 
-  // Función para validar el acceso al sistema si el email y el password coinciden con BD simulada
+  // Funcion login con Express
   const login = (userData) => {
-    if (userData.email === EMAIL && userData.password === PASSWORD) {
-      setAccess(true);
-      navigate("/home");
-    } else {
-      alert("Email o contraseña incorrectos.");
-    }
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    // axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+    axios(`${URL}?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      setAccess(access);
+      access && navigate("/home");
+    });
   };
+
+  // Funcion login antes de Express
+  //! Función para validar el acceso al sistema si el email y el password coinciden con BD simulada
+  // const login = (userData) => {
+  //   if (userData.email === EMAIL && userData.password === PASSWORD) {
+  //     setAccess(true);
+  //     navigate("/home");
+  //   } else {
+  //     alert("Email o contraseña incorrectos.");
+  //   }
+  // };
 
   // useEffect para validar el acceso al sistema si el email y el password coinciden con BD simulada, Si los datos ingresados (email y password) no coinciden con BD simulada o si el usuario ingresa manualmente /home, redirigira a la página de inicio ("locahost:3000" ó "/" que es donde esta el form del login)
   useEffect(() => {
@@ -47,27 +60,22 @@ function App() {
 
   // Función para buscar un personaje
   const onSearch = (id) => {
-    if (isNaN(id)) {
-      alert("Por favor, ingresa un número válido como ID.");
-      return;
-    }
+    // if (isNaN(id)) {
+    //   alert("Por favor, ingresa un número válido como ID.");
+    //   return;
+    // }
     // const URL = "https://rickandmortyapi.com/api/character/${id}`"
     axios(`http://localhost:3001/rickandmorty/character/${id}`)
       .then(({ data }) => {
-        const characterExists = characters.some((character) => character.id === data.id);
-        if (data.id) {
-          if (characterExists) {
-            alert("Este personaje ya se encuentra en la lista.");
-          } else {
-            setCharacters((characters) => [...characters, data]);
+        if (!characters.find((char) => char.id === data.id)) {
+          if (data.name) {
+            setCharacters((oldCharacters) => [...oldCharacters, data]);
           }
         } else {
-          alert(`¡No hay personajes con el ID proporcionado!`);
+          window.alert(`Ya existe un personaje con el id ${id}`);
         }
       })
-      .catch((error) => {
-        alert(`Ocurrió un error al obtener los datos de la API. Por favor, intenta nuevamente más tarde.`);
-      });
+      .catch((err) => window.alert(err));
   };
 
   // Función para cerrar la carta de un personaje

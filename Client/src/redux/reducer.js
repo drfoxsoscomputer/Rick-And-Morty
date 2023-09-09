@@ -8,23 +8,39 @@ const initialState = {
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_FAV:
-      // const addFav = [...state.allFavorites, action.payload];
       return {
         ...state,
-        myFavorites: [...state.allFavorites, action.payload],
-        allFavorites: [...state.allFavorites, action.payload],
+        myFavorites: action.payload,
+        allFavorites: action.payload,
       };
 
+    //! Antes de Express
+    // case ADD_FAV:
+    //   // const addFav = [...state.allFavorites, action.payload];
+    //   return {
+    //     ...state,
+    //     myFavorites: [...state.allFavorites, action.payload],
+    //     allFavorites: [...state.allFavorites, action.payload],
+    //   };
+
+    //! Con Express
     case REMOVE_FAV:
-      // const removeFav = state.myFavorites.filter((fav) => fav.id !== action.payload);
       return {
         ...state,
-        myFavorites: state.myFavorites.filter((fav) => fav.id !== Number(action.payload)),
-        allFavorites: state.myFavorites.filter((fav) => fav.id !== Number(action.payload)),
+        myFavorites: action.payload,
+        allFavorites: action.payload,
       };
+
+    //! Antes de Express
+    // case REMOVE_FAV:
+    //   // const removeFav = state.myFavorites.filter((fav) => fav.id !== action.payload);
+    //   return {
+    //     ...state,
+    //     myFavorites: state.myFavorites.filter((fav) => fav.id !== Number(action.payload)),
+    //     allFavorites: state.myFavorites.filter((fav) => fav.id !== Number(action.payload)),
+    //   };
 
     case FILTER:
-      // const filteredGender = state.allFavorites.filter((character) => character.gender === action.payload);
       return {
         ...state,
         myFavorites: action.payload === "All Favorites" ? [...state.allFavorites] : state.allFavorites.filter((character) => character.gender === action.payload),
@@ -41,7 +57,6 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         myFavorites: [...ordered],
-        // myFavorites: action.payload === "Ascendente" ? state.myFavorites.sort((a, b) => a.id - b.id) : state.myFavorites.sort((a, b) => b.id - a.id),
       };
     default:
       return { ...state };

@@ -11,18 +11,18 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
 
   const [isFav, setIsFav] = useState(false);
 
-  const handleFavorite = () => {
-    isFav ? removeFav(id) : addFav({ id, name, status, species, gender, origin, image });
-    setIsFav(!isFav);
-  };
-
   useEffect(() => {
     myFavorites.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
       }
     });
-  }, [myFavorites,id]);
+  }, [myFavorites]);
+
+  const handleFavorite = () => {
+    isFav ? removeFav(id) : addFav({ id, name, status, species, gender, origin, image });
+    setIsFav(!isFav);
+  };
 
   return (
     <div className={style.card}>
