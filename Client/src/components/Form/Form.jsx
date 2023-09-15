@@ -1,6 +1,7 @@
 import { useState } from "react";
 import validation from "./validation.js";
 import styles from "./Form.module.css";
+import logo from "../../utils/img/logoRaM.png";
 
 const Form = ({ onLogin }) => {
   const [userData, setUserData] = useState({ email: "", password: "" });
@@ -32,20 +33,16 @@ const Form = ({ onLogin }) => {
 
   return (
     <div className={styles.loginContainer}>
-      <div className={styles.neon}>
-        <span
-          className={styles.text}
-          data-text="Rick And Morty">
-          Rick And Morty
-        </span>
-        <span className={styles.gradient}></span>
-        <span className={styles.spotlight}></span>
+      <div>
+        <img
+          src={logo}
+          alt="Rick And Morty"
+        />
       </div>
-      <br />
 
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
-        <label>Email</label>
+
         <input
           className={errors.email && styles.warning}
           type="email"
@@ -55,7 +52,7 @@ const Form = ({ onLogin }) => {
           onChange={handleChange}
         />
         <br />
-        <label>Password</label>
+
         <input
           className={errors.password && styles.warning}
           type={showPassword ? "text" : "password"}
@@ -76,7 +73,6 @@ const Form = ({ onLogin }) => {
         <br />
         <label>Show Password</label>
 
-        <br />
         <button
           disabled={!userData.email || !userData.password}
           type="submit">

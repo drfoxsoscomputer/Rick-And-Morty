@@ -1,0 +1,102 @@
+.navContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+  }
+ 
+  /* .navLink {
+    text-decoration: none;
+    color: #333;
+    margin-right: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: background-color 0.3s ease;
+  } */
+  
+  /* .navLink:hover,
+  .navLink:focus, */
+  .active {
+    /* background-color: #00ffff; */
+    background-color: rgba(255, 255, 255, 0.5);
+
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+  }
+
+  .navContainer searchContainer {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchContainer input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  .navContainer input {
+    /* width: 100%; */
+    /* padding: 12px; */
+    border: none;
+    border-bottom: 2px solid #ccc;
+    background-color: transparent;
+    outline: none;
+    transition: border-bottom-color 0.3s ease;
+  }
+
+  .navContainer input:focus {
+    border-bottom-color: #00ffff;
+  }
+  
+  .navContainer input:focus + label {
+    font-size: 120px;
+    transform: translateY(-120%);
+    opacity: 1;
+  }
+
+  .logoutButton {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  .logoutButton:hover,
+  .logoutButton:focus 
+  {
+    background-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
+  }
+  
+  .divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  }
+  
+  @media (max-width: 768px) {
+    .navContainer {
+      flex-direction: column;
+    }
+  
+    .navLink {
+      margin-bottom: 10px;
+    }
+  
+    .searchContainer {
+      margin-bottom: 10px;
+    }
+  }
+  
+  
+    
+/* background-color: #00ffff;
+background-color: #ff4081; */
