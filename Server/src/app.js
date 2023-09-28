@@ -1,12 +1,10 @@
 const express = require("express");
 const router = require("./routes/index");
 const morgan = require("morgan");
+const cookieParser = require("cookie-parser");
 // const cors = require("cors");
 
 const server = express();
-
-//LIbreria Dotenv .env
-
 
 server.use((req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -17,11 +15,9 @@ server.use((req, res, next) => {
 });
 
 server.use(morgan("dev"));
-// server.use(cors());
 server.use(express.json());
 server.use("/rickandmorty", router);
-
+server.use(cookieParser());
 
 
 module.exports = server;
-

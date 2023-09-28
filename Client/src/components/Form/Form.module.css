@@ -1,40 +1,10 @@
-  /* .warning {
-    border: solid red 1px;
-    border-radius: 0.2em;
-  }
-  
-  .danger {
-    font-size: 12px;
-    color: red;
-    margin-left: 10em;
-  } */
-   body {
+  body {
     background-image: url('../../../assets/BG3.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
   } 
-  .loginContainer img {
-    width: 300px;
-    height: auto;
-    margin-bottom: 20px;
-    animation: logoAnimation 3s infinite;
-  }
-  .loginContainer .input-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-  }
-  
-  .loginContainer .input-container input[type="password"] {
-    margin-right: 10px;
-  }
-  
-  .loginContainer .input-container label {
-    margin-right: 5px;
-  }
   
   .loginContainer {
     display: flex;
@@ -46,8 +16,9 @@
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
   }
   
-  .loginContainer h2 {
+  .loginContainer h1 {
     text-align: center;
+    color: #ff4081;
   }
   
   .loginContainer form {
@@ -55,66 +26,58 @@
     flex-direction: column;
     align-items: center;
     width: 300px;
-    padding: 20px;
+    padding: 15px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    border-radius: 5px;
+    border-radius: 10px;
   }
 
   .loginContainer form:hover {
     box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
   }
   
-  .loginContainer .input-container {
-    position: relative;
+  .logo {
+    width: 300px;
+    height: auto;
     margin-bottom: 20px;
-  }
-  
-  .loginContainer label {
-    top: 50%;
-    left: 16px;
-    transform: translateY(-50%);
-    pointer-events: none;
-    transition: all 0.3s ease;
-    opacity: 0.5;
+    animation: logoAnimation 3s infinite;
   }
   
   .loginContainer input {
-    width: 100%;
-    padding: 12px;
+    position: relative;
+    width: 90%;
+    padding: 0.5rem;
     border: none;
+    border-radius: 2rem;
     border-bottom: 2px solid #ccc;
     background-color: transparent;
     outline: none;
     transition: border-bottom-color 0.3s ease;
+    /* backdrop-filter: blur(5px); */
   }
   
   .loginContainer input:focus {
     border-bottom-color: #00ffff;
   }
   
-  .loginContainer input:focus + label {
-    font-size: 120px;
-    transform: translateY(-120%);
-    opacity: 1;
-  }
-  
-  
   .loginContainer button {
+    position: static;
+    margin-left: 10px;
     padding: 10px;
     border: none;
-    
-    background-color: #ff4081;
-    color: #fff;
-    font-size: 16px;
-    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
   
   .loginContainer button:hover {
-    background-color: #00ffff;
-    color: black;
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+  }
+
+  .loginContainer button:focus  
+  {
+    box-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 15px #ff4081;
   }
 
   .loginContainer p {
@@ -123,6 +86,15 @@
     text-align: center;
     font-size: 12px;
   }
+
+  .eye {
+    position: absolute;
+    right: 14px;
+    top: 80px;
+    width: 1.2rem;
+    
+  }
+  
   
   /* Responsive styles */
   @media (max-width: 480px) {
@@ -136,9 +108,62 @@
       transform: scale(1);
     }
     50% {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     100% {
       transform: scale(1);
     }
   }
+
+
+
+
+
+
+
+  
+      /* .warning {
+      border: solid red 1px;
+      border-radius: 0.2em;
+    }
+    
+    .danger {
+      font-size: 12px;
+      color: red;
+      margin-left: 10em;
+    } */
+    /* .loginContainer .input-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      
+    } */
+    
+    /* .loginContainer .input-container input[type="password"] {
+      margin-right: 50px;
+      
+    } */
+    
+    /* .loginContainer .input-container label {
+      margin-right: 5px;
+    } */
+    
+    /* .loginContainer .input-container {
+      position: relative;
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
+    } */
+    
+    /* .loginContainer label {
+      top: 50%;
+      left: 16px;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: all 0.3s ease;
+      opacity: 0.5;
+    } */
+      /* .loginContainer input:focus + label {
+      font-size: 120px;
+      transform: translateY(-120%);
+      opacity: 1;
+    } */

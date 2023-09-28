@@ -1,48 +1,46 @@
+.navContainer img {
+  width: 6rem;
+  height: auto;
+  animation: logoAnimation 3s infinite;
+}
+
 .navContainer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     padding: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
   }
- 
-  /* .navLink {
-    text-decoration: none;
-    color: #333;
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 5px;
-    background-color: #fff;
-    transition: background-color 0.3s ease;
-  } */
   
-  /* .navLink:hover,
-  .navLink:focus, */
-  .active {
-    /* background-color: #00ffff; */
+  .navLink {
     background-color: rgba(255, 255, 255, 0.5);
-
     color: black;
     text-decoration: none;
     padding: 5px;
     border-radius: 5px;
+  }
+  
+  .active {
+    box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: black;
+    text-decoration: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  .navLink:hover {
     box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
   }
 
-  .navContainer searchContainer {
-    display: flex;
-    align-items: center;
+  .navLink:focus  
+  {
+    box-shadow: 0 0 5px #ff4081, 0 0 10px #ff4081, 0 0 15px #ff4081;
   }
-  
-  .searchContainer input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+
+
   .navContainer input {
-    /* width: 100%; */
-    /* padding: 12px; */
     border: none;
     border-bottom: 2px solid #ccc;
     background-color: transparent;
@@ -54,49 +52,41 @@
     border-bottom-color: #00ffff;
   }
   
-  .navContainer input:focus + label {
-    font-size: 120px;
-    transform: translateY(-120%);
-    opacity: 1;
-  }
-
-  .logoutButton {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
-    background-color: #333;
-    color: #fff;
-    transition: background-color 0.3s ease;
-  }
   
-  .logoutButton:hover,
-  .logoutButton:focus 
-  {
-    background-color: #00ffff;
-    box-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff, 0 0 30px #00ffff;
-  }
-  
-  .divider {
-    margin: 10px 0;
-    border: none;
-    border-top: 1px solid #ccc;
-  }
   
   @media (max-width: 768px) {
     .navContainer {
       flex-direction: column;
     }
-  
+    
     .navLink {
       margin-bottom: 10px;
     }
-  
+    
     .searchContainer {
       margin-bottom: 10px;
     }
   }
+
+  @keyframes logoAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
   
   
-    
-/* background-color: #00ffff;
-background-color: #ff4081; */
+  
+  /* background-color: #00ffff;
+  background-color: #ff4081; */
+  
+  /* .divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ccc;
+  } */

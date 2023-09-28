@@ -1,4 +1,4 @@
-.detail {
+.about {
     display: flex;
     flex-wrap: wrap; 
     /* justify-content: center; */
@@ -9,22 +9,23 @@
     height: auto;
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(5px);
-    
-
   }
-  .detail img {
+
+  .about img {
     margin: 10px;
     border-radius: 15%;
     width: auto;
     height: auto;
-  }
+}
 
-  .detail h3 {
-    text-align: center;
-  }
-
-  .detail h1 {
+.about h1 {
     font-size: 2rem;
     border-radius: 50%;
     background-color: gold;
+    /* width: 300px; */
+}
+
+.about h3 {
+    text-align: center;
+    width: 500px
 }

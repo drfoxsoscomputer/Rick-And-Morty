@@ -3,4 +3,4 @@
 
 const users = [{email: 'daprthefox@gmail.com', password: 'asd123'}]
 
-module.exports = users
+// module.exports = users

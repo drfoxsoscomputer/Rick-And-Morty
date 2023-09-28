@@ -49,7 +49,7 @@ function App() {
     // Reiniciar la página para que el usuario pueda volver a ingresar sus credenciales. y asi no queden cargadas tarjetas agregadas antes de desloguearse.
     !access && navigate("/");
     alert("¡Hasta pronto!");
-    window.location.reload();
+    // window.location.reload();
   };
 
   // Función async/await para agregar una tarjeta de un personaje

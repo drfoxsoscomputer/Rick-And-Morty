@@ -1,45 +1,54 @@
 import SearchBar from "../SearchBar/SearchBar.jsx";
 import { NavLink } from "react-router-dom";
+import logo from "../../utils/img/logoRaM.png";
 import styles from "./Nav.module.css";
 
 const Nav = ({ onSearch, onLogout }) => {
   return (
     <nav className={styles.navContainer}>
+      <div>
+        <img
+          className={styles.logo}
+          src={logo}
+          alt="Rick And Morty"
+        />
+      </div>
+
       <NavLink
-        // className={styles.navLink}
+        className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
         exact
-        to="/home"
-        className={styles.active}>
+        to="/home">
         Home
       </NavLink>
 
       <NavLink
-        // className={styles.navLink}
+        className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
         exact
-        to="/favorites"
-        className={styles.active}>
+        to="/favorites">
         Favorites
       </NavLink>
 
       <NavLink
+        className={({ isActive }) => (isActive ? styles.active : styles.navLink)}
         exact
-        to="/about"
-        className={styles.active}>
+        to="/about">
         About
       </NavLink>
 
       <NavLink to="/home">
-        <SearchBar onSearch={onSearch} />
+        <SearchBar
+          className={styles.search}
+          onSearch={onSearch}
+        />
       </NavLink>
 
       <NavLink
-        exact
         to="/"
-        className={styles.active}
+        className={styles.navLink}
         onClick={onLogout}>
-        LogOut
+        Log out
       </NavLink>
-      <hr className={styles.divider} />
+      {/* <hr className={styles.divider} /> */}
     </nav>
   );
 };

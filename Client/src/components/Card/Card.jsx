@@ -17,7 +17,7 @@ const Card = ({ character, onClose, addFav, removeFav, myFavorites }) => {
         setIsFav(true);
       }
     });
-  }, [myFavorites]);
+  }, [myFavorites, id]);
 
   const handleFavorite = () => {
     isFav ? removeFav(id) : addFav({ id, name, status, species, gender, origin, image });

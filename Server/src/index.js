@@ -1,25 +1,32 @@
-const server = require("./app");
-const PORT = 3001;
+const app = require("./app");
+require("dotenv").config();
+const { PORT } = process.env;
+const { conn } = require("./DB_conection");
 
-server.listen(PORT, () => {
-  console.log(`Server is listening on port: ${PORT}`);
-});
+conn
+  .sync({ force: false })
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Server is listening on port: ${PORT}`);
+    });
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 
+//! Opción 1.
+// server.listen(PORT, async () => {
+//   await conn.sync({ force: true }); //! Siempre que se cree la tabla, se borra y se crea al darle start.
+//   // await conn.sync({ alter: true }); //! Solo modifica los cambios pequeños
+//   console.log(`Server is listening on port: ${PORT}`);
+// });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+//! Opción 2.
+// conn.sync({ force: true }).then(() => {
+//   server.listen(PORT, () => {
+//     console.log(`Server is listening on port: ${PORT}`);
+//   });
+// });
 
 //! Código WebServer
 // const http = require("http");

@@ -1,0 +1,11 @@
+.navLink {
+  margin-left: 10px;
+  padding: 10px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 5px;
+}
+
+.navLink:hover {
+  box-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00ffff;
+}
