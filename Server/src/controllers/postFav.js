@@ -1,4 +1,4 @@
-const { Favorite, User } = require("../DB_conection");
+const { Favorite} = require("../DB_conection");
 
 const postFav = async (req, res) => {
   try {

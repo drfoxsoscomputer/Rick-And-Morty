@@ -23,7 +23,7 @@ const SearchBar = ({ onSearch }) => {
       {/* {location.pathname === "/home" && ( */}
         <input
           type="search"
-          placeholder="Id..."
+          placeholder="   Id..."
           onChange={handleChange}
           value={id}
         />
